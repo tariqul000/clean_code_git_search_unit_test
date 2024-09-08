@@ -54,8 +54,6 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.junit.ktx
 
-
-
     testImplementation libs.mockwebserver
     testImplementation libs.junit
     testImplementation libs.mockito.core
@@ -64,9 +62,17 @@ dependencies {
     testImplementation libs.mockito.kotlin
     testImplementation libs.kotlinx.coroutines.test
 
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation libs.androidx.runner
+    androidTestImplementation libs.androidx.rules
+
+    // Espresso for UI tests
+    androidTestImplementation libs.androidx.espresso.core
+
+
+
     // Android UI tests
     androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
 
     // Hilt testing
     androidTestImplementation libs.hilt.android.testing
@@ -76,12 +82,6 @@ dependencies {
 
     androidTestImplementation(libs.hilt.android.testing)
     kaptAndroidTest(libs.hilt.android.compiler)
-
-
-
-
-
-
 
     // Coroutines for handling background tasks
     implementation libs.kotlinx.coroutines.android

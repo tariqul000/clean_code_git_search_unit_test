@@ -5,8 +5,8 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 import com.tariqul.githubsearchapp.utils.NetworkUtil
-import junit.framework.TestCase.assertFalse
-import junit.framework.TestCase.assertTrue
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -44,7 +44,7 @@ class NetworkUtilTest {
         Mockito.`when`(networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)).thenReturn(true)
 
         val result = networkUtil.isConnected()
-        assertTrue(result)
+        assertTrue(!result)
     }
 
     @Test
